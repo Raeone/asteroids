@@ -1,9 +1,9 @@
 import pygame
 
-# Base class for game objects
+# Base class for game objects (all objects are circles, even triangle player)
 class CircleShape(pygame.sprite.Sprite):
     def __init__(self, x, y, radius):
-        # we will be using this later
+        # attribut Player.containters serves for pygame.sprite.Groups
         if hasattr(self, "containers"):
             super().__init__(self.containers)
         else:
