@@ -1,4 +1,5 @@
 import pygame
+import sys
 from constants import *
 from player import Player
 from asteroid import Asteroid
@@ -44,6 +45,12 @@ def main():
             obj.draw(screen)
         # update game / circleshape objects (every object in updatable group)
         updatable.update(dt)
+
+        # exit game if asteroids are colliding with player
+        for asteroid in asteroids:
+            if asteroid.are_colliding(player):
+                print("Game over!")
+                sys.exit()
         
         # refresh screen
         pygame.display.flip() 
