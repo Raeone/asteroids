@@ -4,6 +4,7 @@ from constants import *
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+from shot import Shot
 
 def main():
     # pygame initialization
@@ -15,18 +16,22 @@ def main():
     # pygame FPS limitation
     clock = pygame.time.Clock()
 
-    # group objects - create pygame groups
+    # group objects - create pygame groups (after creating class, import group of its objects here, so you can use them)
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
+    shots = pygame.sprite.Group()
+
     # add containers attribut to Player class (to all player objects)
     Player.containers = (updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = updatable
+    Shot.containers = (shots, updatable, drawable)
+
     # create player object
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 )    
     asteroid_field = AsteroidField()
-
+    
     # delta time variable
     dt = 0
 

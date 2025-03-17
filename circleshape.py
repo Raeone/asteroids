@@ -28,7 +28,7 @@ class CircleShape(pygame.sprite.Sprite):
         return distance <= colliding_distance
     
 # if __name__ == "__main__":
-#     a = CircleShape(1, 1, 1)
+#     a = CircleShape(1, 1, 1)  
 #     b = CircleShape(10, 10, 1)
 #     x = a.is_colliding(b)
 #     print(f"--- {x}")
