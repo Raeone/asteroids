@@ -11,12 +11,3 @@ class Shot(CircleShape):
     
     def update(self, dt):
         self.position += self.velocity * dt
-
-
-
-
-# TODO: delete
-if __name__ == "__main__":
-    a = Shot(10, 10)
-    x = vars(a)
-    print(f"--- {x}")
